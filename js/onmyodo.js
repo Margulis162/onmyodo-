@@ -1,7 +1,7 @@
 //variables
 
 //picked element
-let elm;
+let elm ="Tree";
 
 //curently active button
 let activeButton;
@@ -13,8 +13,10 @@ let randElementPick = Math.random();
 
 let computerMove;
 
-
-
+//player mp
+let pmp =10;
+//computer mp
+let cmp =10;
 
 
 //functions
@@ -36,7 +38,7 @@ function removeActiveClass() {
 }
 
 //element selector computer
-function computerMoveGen (){
+function computerMoveGen(){
   
    if (randElementPick >= 0  && randElementPick < 1/5) {
     computerMove = "Tree";
@@ -54,11 +56,242 @@ function computerMoveGen (){
    else if (randElementPick >= 4/5  && randElementPick < 1){
     computerMove = "Water";
    }
-   console.log(randElementPick);
-   console.log(computerMove);
+  
    randElementPick = Math.random();
+   return computerMove;
+}
+ 
+
+//display mp
+function mpDisplay(){
+document.getElementById('player_mana').innerHTML = `MP: ${pmp}`;
+
+document.getElementById('computer_mana').innerHTML = `MP: ${cmp}`;
+
+}
+//battle processor
+function battle(){
+  computerMove = computerMoveGen();
+  console.log("player " + elm);
+  console.log("cpmputer " + computerMove );
+
+ 
+  if(pmp>0 && cmp>0){
+
+    //element Tree interactions
+   if(elm == "Tree" && computerMove == "Tree"){
+    pmp+=4;
+    cmp+=4;
+        if(pmp>10){
+         pmp=10;
+    }
+         if(cmp>10){
+          cmp=10;
+    }
+        mpDisplay();
+        gameEndings();
+  }
+
+    else if(elm == "Tree" && computerMove =="Fire"){
+      pmp-=4;
+      mpDisplay();
+      gameEndings();
+    }
+    else if(elm == "Tree" && computerMove =="Earth"){
+      pmp+=5;
+      if(pmp>10){
+        pmp=10;
+      }
+      mpDisplay();
+      gameEndings();
+    }
+    else if(elm == "Tree" && computerMove =="Metal"){
+      pmp-=3;
+      mpDisplay();
+      gameEndings();
+    }
+    else if(elm == "Tree" && computerMove =="Water"){
+      pmp+=2;
+      if(pmp>10){
+        pmp=10;
+      }
+      mpDisplay();
+      gameEndings();
+    }
+    
+
+      //element Fire interactions
+   else if(elm == "Fire" && computerMove == "Tree"){
+    cmp-=4;
+    
+    mpDisplay();
+    gameEndings();
+     }
+
+    else if(elm == "Fire" && computerMove =="Fire"){
+      pmp-=4;
+      cmp-=4;
+      mpDisplay();
+      gameEndings();
+    }
+    else if(elm == "Fire" && computerMove =="Earth"){
+      cmp+=3;
+      if(cmp>10){
+        cmp=10;
+      }
+      mpDisplay();
+      gameEndings();
+    }
+    else if(elm == "Fire" && computerMove =="Metal"){
+      cmp-=3;
+      mpDisplay();
+      gameEndings();
+    }
+    else if(elm == "Fire" && computerMove =="Water"){
+      pmp-=4;
+      
+      mpDisplay();
+      gameEndings();
+    }
+
+
+
+      //element Earth interactions
+      else if(elm == "Earth" && computerMove == "Tree"){
+        pmp-=3;
+        
+        mpDisplay();
+        gameEndings();
+         }
+    
+        else if(elm == "Earth" && computerMove =="Fire"){
+          pmp+=2;
+          if(pmp>10){
+            pmp=10;
+       }
+          
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Earth" && computerMove =="Earth"){
+          cmp+=2;
+          pmp+=2;
+          if(cmp>10){
+            cmp=10;
+          }
+          if(pmp>10){
+            pmp=10;
+       }
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Earth" && computerMove =="Metal"){
+          pmp-=2;
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Earth" && computerMove =="Water"){
+          cmp-=3;
+          
+          mpDisplay();
+          gameEndings();
+        }
+
+        //element Metal interactions
+      else if(elm == "Metal" && computerMove == "Tree"){
+        cmp-=3;
+      mpDisplay();
+      gameEndings();
+         }
+    
+        else if(elm == "Metal" && computerMove =="Fire"){
+          pmp-=3;
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Metal" && computerMove =="Earth"){
+          pmp+=2;
+          if(pmp>10){
+            pmp=10;
+       }
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Metal" && computerMove =="Metal"){
+          pmp--;
+          cmp--;
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Metal" && computerMove =="Water"){
+          pmp-=3;
+          
+          mpDisplay();
+          gameEndings();
+        }
+    
+
+
+          //element Water interactions
+      else if(elm == "Water" && computerMove == "Tree"){
+        cmp+=2;
+        if(cmp>10){
+          cmp=10;
+        }
+        mpDisplay();
+        gameEndings();
+         }
+    
+        else if(elm == "Water" && computerMove =="Fire"){
+          cmp-=4;
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Water" && computerMove =="Earth"){
+          pmp-=3;
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Water" && computerMove =="Metal"){
+          cmp-=3;
+          mpDisplay();
+          gameEndings();
+        }
+        else if(elm == "Water" && computerMove =="Water"){
+          pmp++;
+          cmp++;
+          if(pmp>10){
+            pmp=10;
+       }
+            if(cmp>10){
+             cmp=10;
+       }
+          
+          mpDisplay();
+          gameEndings();
+        }
+    
+
+
+
+
+
+  }
+   //game endings
+   function gameEndings(){
+   if(pmp<=0 && cmp>0){
+    alert("You were defited. Game over.");
+   } 
+    else if(cmp <= 0 && pmp >0){
+      alert("Victory!");
+    }
+    else if(pmp<=0 && cmp<=0){
+      alert("Everybody loose the war.");
+    }
+   
+
+}
 }
 
-function test(){
-  console.log(randElementPick);
-}
+// function test(){
+//   console.log(randElementPick);
