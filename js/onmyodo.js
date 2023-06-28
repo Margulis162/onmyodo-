@@ -89,14 +89,14 @@ function battle(){
           cmp=10;
     }
         mpDisplay();
-        outliner();
+        // pmpOutliner();
         gameEndings();
   }
 
     else if(elm == "Tree" && computerMove =="Fire"){
       pmp-=4;
       mpDisplay();
-      outliner();
+     // pmpOutliner();
       gameEndings();
     }
     else if(elm == "Tree" && computerMove =="Earth"){
@@ -105,13 +105,13 @@ function battle(){
         pmp=10;
       }
       mpDisplay();
-      outliner();
+      // pmpOutliner();
       gameEndings();
     }
     else if(elm == "Tree" && computerMove =="Metal"){
       pmp-=3;
       mpDisplay();
-      outliner();
+      // pmpOutliner();
       gameEndings();
     }
     else if(elm == "Tree" && computerMove =="Water"){
@@ -120,7 +120,7 @@ function battle(){
         pmp=10;
       }
       mpDisplay();
-      outliner();
+     // pmpOutliner();
       gameEndings();
     }
     
@@ -296,16 +296,16 @@ function battle(){
    
 
 }
-}
- function outliner(){
-
-   const lst =[...document.getElementsByClassName('playerMP')];
-   var listLength = lst.length;
-    for (var i =0; i < listLength; i++){
-      if (lst[i].innerHTML < pmp){
-        lst[i].classList.add('btn-outline')
-      }
-    }
+// }
+//  function pmpOutliner(){
+//     const pmplst 
+  //  const lst =[...document.getElementsByClassName('playerMP')];
+  //  var listLength = lst.length;
+  //   for (var i =0; i < listLength; i++){
+  //     if (lst[i].innerHTML < pmp){
+  //       lst[i].classList.add('btn-outline')
+    //   }
+    // }
        
     
     
