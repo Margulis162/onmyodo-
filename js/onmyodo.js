@@ -89,12 +89,14 @@ function battle(){
           cmp=10;
     }
         mpDisplay();
+        outliner();
         gameEndings();
   }
 
     else if(elm == "Tree" && computerMove =="Fire"){
       pmp-=4;
       mpDisplay();
+      outliner();
       gameEndings();
     }
     else if(elm == "Tree" && computerMove =="Earth"){
@@ -103,11 +105,13 @@ function battle(){
         pmp=10;
       }
       mpDisplay();
+      outliner();
       gameEndings();
     }
     else if(elm == "Tree" && computerMove =="Metal"){
       pmp-=3;
       mpDisplay();
+      outliner();
       gameEndings();
     }
     else if(elm == "Tree" && computerMove =="Water"){
@@ -116,6 +120,7 @@ function battle(){
         pmp=10;
       }
       mpDisplay();
+      outliner();
       gameEndings();
     }
     
@@ -292,6 +297,21 @@ function battle(){
 
 }
 }
+ function outliner(){
 
-// function test(){
-//   console.log(randElementPick);
+   const lst =[...document.getElementsByClassName('playerMP')];
+   var listLength = lst.length;
+    for (var i =0; i < listLength; i++){
+      if (lst[i].innerHTML < pmp){
+        lst[i].classList.add('btn-outline')
+      }
+    }
+       
+    
+    
+    }
+    
+
+//TODO: 1. More testing;
+// 2. Make tower buttons to outline as mp goes down
+//3.  Add animation 
