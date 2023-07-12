@@ -87,30 +87,31 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-
+    <link rel="stylesheet" type="text/css" href="css/general.css"/>
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark-subtle" style="height:100vh;">
   <div class="container bg-dark">
-   <div class="row">
+   <div class="row ">
 
     <!--This is a menue to select an element player will play with-->
-      <div class="col-md-1 btn-group-vertical">
-        <p class="text-light">Chose your element:</p>
+    <p class="text-light col-md-2  ">Chose your element:</p>
+      <div class="col-md-8 btn-group py-3 ">
         <button class="btn btn-outline-warning active" onclick="elmPicker(this)" title="It/'s like a power of life and grow. Restors 3 mp.">Tree</button>
         <button class="btn btn-outline-warning" onclick="elmPicker(this)">Fire</button>
         <button class="btn btn-outline-warning" onclick="elmPicker(this)">Earth</button>
         <button class="btn btn-outline-warning" onclick="elmPicker(this)">Metal</button>
         <button class="btn btn-outline-warning" onclick="elmPicker(this)">Water</button>
-        <button class="btn btn-outline-danger" onclick="battle()">Fight!</button>
+        <button class="btn btn-danger" onclick="battle()">Fight!</button>
       </div>
+   </div>
    <!---->
   
     <!--mana score-->
-   <div class="row ">
-    <div class="col-md-1 text-light pt-5" id="player_mana" ">MP:10</div>
+   <div class="row">
+    <div class="col-md-1 text-light" id="player_mana" ">MP:10</div>
      <!--player's tower-->
-    <div class="col-md-1 offset-md-1 btn-group-vertical">
-      <button class="btn btn-success" id="pmp1">10</button>
+    <div class="col-md-1 offset-md-1 btn-group-vertical mt-auto">
+      <button class="btn btn-success " id="pmp1">10</button>
       <button class="btn btn-success " id="pmp2">9</button>
       <button class="btn btn-success " id="pmp3">8</button>
       <button class="btn btn-primary " id="pmp4">7</button>
@@ -123,9 +124,9 @@
       <button class="btn btn-danger " title="things are bad" id="pmp10">1</button>
     </div>
     <!--animation space-->
-    <div class="col-md-6"></div>
+    <div class="col-md-6 border border-5 border-warning-subtle"></div>
     <!--computer's tower TODO:not sure if I like what disable does to the balance-->
-    <div class="col-md-1 btn-group-vertical">
+    <div class="col-md-1 btn-group-vertical mt-auto">
       <button class="btn btn-success" >10</button>
       <button class="btn btn-success " >9</button>
       <button class="btn btn-success " >8</button>

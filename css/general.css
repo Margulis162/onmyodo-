@@ -1,0 +1,8 @@
+body {
+  height: 100vh;
+}
+body .container {
+  height: inherit;
+}
+
+/*# sourceMappingURL=general.css.map */
