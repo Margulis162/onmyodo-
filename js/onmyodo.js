@@ -70,10 +70,12 @@ document.getElementById('computer_mana').innerHTML = `MP: ${cmp}`;
 
 }
 //battle processor
+
 function battle(){
   computerMove = computerMoveGen();
   console.log("player " + elm);
   console.log("cpmputer " + computerMove );
+  
 
  
   if(pmp>0 && cmp>0){
@@ -154,7 +156,7 @@ function battle(){
     }
     else if(elm == "Fire" && computerMove =="Water"){
       pmp-=4;
-      
+     
       mpDisplay();
       gameEndings();
     }
@@ -275,7 +277,8 @@ function battle(){
           mpDisplay();
           gameEndings();
         }
-    
+        pmpOutliner();
+        cmpOutliner();
 
 
 
@@ -296,18 +299,39 @@ function battle(){
    
 
 }
-// }
-//  function pmpOutliner(){
-//     const pmplst 
-  //  const lst =[...document.getElementsByClassName('playerMP')];
-  //  var listLength = lst.length;
-  //   for (var i =0; i < listLength; i++){
-  //     if (lst[i].innerHTML < pmp){
-  //       lst[i].classList.add('btn-outline')
-    //   }
-    // }
-       
+//visualize pmp score
+function pmpOutliner(){
+  let lives = document.querySelectorAll(".pmp")
+  for(let i=0; i<lives.length; i++){
+    if (lives[i].textContent > pmp){
+      lives[i].classList.remove("btn-success");
+      
+      lives[i].classList.add("btn-outline-success");
+
+    }else{
+      lives[i].classList.add("btn-success");
+      
+      lives[i].classList.remove("btn-outline-success");
+    }
+  }
+ }
     
+ //visualize cmp
+ function cmpOutliner(){
+  let lives = document.querySelectorAll(".cmp")
+  for(let i=0; i<lives.length; i++){
+    if (lives[i].textContent > cmp){
+      lives[i].classList.remove("btn-danger");
+      
+      lives[i].classList.add("btn-outline-danger");
+
+    }else{
+      lives[i].classList.add("btn-danger");
+      
+      lives[i].classList.remove("btn-outline-danger");
+    }
+  }
+ } 
     
     }
     
