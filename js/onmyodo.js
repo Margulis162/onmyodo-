@@ -64,9 +64,9 @@ function computerMoveGen(){
 
 //display mp
 function mpDisplay(){
-document.getElementById('player_mana').innerHTML = `MP: ${pmp}`;
+document.getElementById('player_mana').innerHTML = `Player HP: ${pmp}`;
 
-document.getElementById('computer_mana').innerHTML = `MP: ${cmp}`;
+document.getElementById('computer_mana').innerHTML = `Enemy HP: ${cmp}`;
 
 }
 //battle processor

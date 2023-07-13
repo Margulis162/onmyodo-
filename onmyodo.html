@@ -91,11 +91,12 @@
   </head>
   <body class="bg-dark-subtle" style="height:100vh;">
   <div class="container bg-dark">
+    <div class="row"> <h4 class=" col-md-4 offset-md-4 text-success text-center ">Chose an element to play:</h4></div>
    <div class="row ">
 
     <!--This is a menue to select an element player will play with-->
-    <p class="text-light col-md-2  ">Chose your element:</p>
-      <div class="col-md-8 btn-group py-3 ">
+    
+      <div class="col-md-8  offset-md-2 btn-group py-3 ">
         <button class="btn btn-outline-warning active" onclick="elmPicker(this)" title="It/'s like a power of life and grow. Restors 3 mp.">Tree</button>
         <button class="btn btn-outline-warning" onclick="elmPicker(this)">Fire</button>
         <button class="btn btn-outline-warning" onclick="elmPicker(this)">Earth</button>
@@ -107,10 +108,10 @@
    <!---->
   
     <!--mana score-->
-   <div class="row">
-    <div class="col-md-1 text-light" id="player_mana" ">MP:10</div>
+   <div class="row h-75">
+   
      <!--player's tower-->
-    <div class="col-md-1 offset-md-1 btn-group-vertical mt-auto">
+    <div class="col-md-1 btn-group-vertical mt-auto">
       <div class="btn btn-success  pmp" id="pmp1">10</div>
       <div class="btn btn-success pmp" id="pmp2">9</div>
       <div class="btn btn-success pmp" id="pmp3">8</div>
@@ -123,7 +124,7 @@
       <div class="btn btn-success pmp" title="things are bad" id="pmp10">1</div>
     </div>
     <!--animation space-->
-    <div class="col-md-6 border border-5 border-warning-subtle"></div>
+    <div class="col-md-10 border border-5 border-warning-subtle"></div>
     <!--computer's tower TODO:not sure if I like what disable does to the balance-->
     <div class="col-md-1 btn-group-vertical mt-auto">
       <button class="btn btn-danger cmp" >10</button>
@@ -137,11 +138,14 @@
       <button class="btn btn-danger cmp" >2</button>
       <button class="btn btn-danger cmp" >1</button>
     </div>
-    <div class="col-md-1 offset-md-1 text-light pt-5" id="computer_mana">MP:10</div>
-   </div>
-
-   </div>
-
+   
+    
+  </div>
+  <div class="row">
+    <div class="col-md-1 text-light ps-4 pt-3" id="player_mana" ">Player HP:10</div>
+    <div class="col-md-1 offset-md-10 text-light ps-4 pt-3" id="computer_mana">Enemy HP:10</div>
+  </div>
+</div>
   
   
   </div>
